@@ -1,6 +1,11 @@
 class Piano extends React.Component {
-  render() {
-    const notes = [
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      notes: props.notes
+    }
+    this.notes = [
       {
         name: 'C',
         type: 'natural'
@@ -112,7 +117,9 @@ class Piano extends React.Component {
         type: 'natural'
       }
     ]
-    const noteItems = notes.map((note, index) =>
+  }
+  render() {
+    const noteItems = this.notes.map((note, index) =>
       <li className={note.type} key={index} style={note.type == 'sharp-flat' ? {left: note.offset} : null}>
         <div className="key-label">
           {
