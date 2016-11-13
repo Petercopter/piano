@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    meta content='text/html; charset=UTF-8' http-equiv='Content-Type'
+    title Piano
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all'
+    = stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', media: 'all'
+    = javascript_include_tag 'application'
+  body
+    nav.navbar.navbar-inverse.navbar-static-top
+      .container-fluid
+        .navbar-header
+          a.navbar-brand href='#' Piano
+    
+    .container= yield
