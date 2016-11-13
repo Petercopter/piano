@@ -8,7 +8,7 @@ class Piano extends React.Component {
       {
         name: 'D♭ C♯',
         type: 'sharp-flat',
-        offset: '4.5%'
+        offset: '4%'
       },
       {
         name: 'D',
@@ -48,7 +48,7 @@ class Piano extends React.Component {
       {
         name: 'B♭ A♯',
         type: 'sharp-flat',
-        offset: '37%'
+        offset: '37.5%'
       },
       {
         name: 'B',
@@ -83,7 +83,7 @@ class Piano extends React.Component {
       {
         name: 'G♭ F♯',
         type: 'sharp-flat',
-        offset: '70%'
+        offset: '70.5%'
       },
       {
         name: 'G',
@@ -92,7 +92,7 @@ class Piano extends React.Component {
       {
         name: 'A♭ G♯',
         type: 'sharp-flat',
-        offset: '77%'
+        offset: '77.5%'
       },
       {
         name: 'A',
@@ -101,7 +101,7 @@ class Piano extends React.Component {
       {
         name: 'B♭ A♯',
         type: 'sharp-flat',
-        offset: '83.5%'
+        offset: '84%'
       },
       {
         name: 'B',
@@ -114,17 +114,21 @@ class Piano extends React.Component {
     ]
     const noteItems = notes.map((note, index) =>
       <li className={note.type} key={index} style={note.type == 'sharp-flat' ? {left: note.offset} : null}>
-        {
-          note.name.split(' ').map((pitch, index) =>
-            <div key={index}>{pitch}</div>
-          )
-        }
+        <div className="key-label">
+          {
+            note.name.split(' ').map((pitch, index) =>
+              <div key={index}>{pitch}</div>
+            )
+          }
+        </div>
       </li>
     )
     return(
-      <ul id="piano">
-        {noteItems}
-      </ul>
+      <div id="piano-wrapper">
+        <ul id="piano">
+          {noteItems}
+        </ul>
+      </div>
     )
   }
 }
