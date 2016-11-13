@@ -1,0 +1,26 @@
+#piano {
+  @extend .list-unstyled;
+  display: table;
+  width: 100%;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  text-align: center;
+  overflow: auto;
+  height: 200px;
+  position: relative;
+  li {
+    padding: 5px;
+    &.natural {
+      display: table-cell;
+      border-right: 1px solid #000;
+    }
+    &.sharp-flat {
+      position: absolute;
+      left: 0;
+      background: #000;
+      color: #fff;
+      width: 5%;
+    }
+  }
+}
