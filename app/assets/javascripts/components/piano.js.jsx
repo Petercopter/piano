@@ -6,7 +6,7 @@ class Piano extends React.Component {
         type: 'natural'
       },
       {
-        name: 'D♭ C♯',
+        name: 'C♯ D♭',
         type: 'sharp-flat',
         offset: '4%'
       },
@@ -15,7 +15,7 @@ class Piano extends React.Component {
         type: 'natural'
       },
       {
-        name: 'E♭ D♯',
+        name: 'D♯ E♭',
         type: 'sharp-flat',
         offset: '11%'
       },
@@ -25,10 +25,10 @@ class Piano extends React.Component {
       },
       {
         name: 'F',
-        type: 'natural',
+        type: 'natural'
       },
       {
-        name: 'G♭ F♯',
+        name: 'F♯ G♭',
         type: 'sharp-flat',
         offset: '23.5%'
       },
@@ -37,7 +37,7 @@ class Piano extends React.Component {
         type: 'natural'
       },
       {
-        name: 'A♭ G♯',
+        name: 'G♯ A♭',
         type: 'sharp-flat',
         offset: '30.5%'
       },
@@ -46,7 +46,7 @@ class Piano extends React.Component {
         type: 'natural'
       },
       {
-        name: 'B♭ A♯',
+        name: 'A♯ B♭',
         type: 'sharp-flat',
         offset: '37.5%'
       },
@@ -59,7 +59,7 @@ class Piano extends React.Component {
         type: 'natural'
       },
       {
-        name: 'D♭ C♯',
+        name: 'C♯ D♭',
         type: 'sharp-flat',
         offset: '50.5%'
       },
@@ -68,7 +68,7 @@ class Piano extends React.Component {
         type: 'natural'
       },
       {
-        name: 'E♭ D♯',
+        name: 'D♯ E♭',
         type: 'sharp-flat',
         offset: '57.5%'
       },
@@ -81,7 +81,7 @@ class Piano extends React.Component {
         type: 'natural',
       },
       {
-        name: 'G♭ F♯',
+        name: 'F♯ G♭',
         type: 'sharp-flat',
         offset: '70.5%'
       },
@@ -90,7 +90,7 @@ class Piano extends React.Component {
         type: 'natural'
       },
       {
-        name: 'A♭ G♯',
+        name: 'G♯ A♭',
         type: 'sharp-flat',
         offset: '77.5%'
       },
@@ -99,7 +99,7 @@ class Piano extends React.Component {
         type: 'natural'
       },
       {
-        name: 'B♭ A♯',
+        name: 'A♯ B♭',
         type: 'sharp-flat',
         offset: '84%'
       },
