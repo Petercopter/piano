@@ -9,7 +9,6 @@
 notes = [
   {
     name: 'C',
-    type: 'natural',
     scales: [
       {
         type: 'major',
@@ -18,75 +17,58 @@ notes = [
     ]
   },
   {
-    name: 'C♯',
-    type: 'sharp'
+    name: 'C♯'
   },
   {
-    name: 'D♭',
-    type: 'flat'
+    name: 'D♭'
   },
   {
-    name: 'D',
-    type: 'natural'
+    name: 'D'
   },
   {
-    name: 'D♯',
-    type: 'sharp'
+    name: 'D♯'
   },
   {
-    name: 'E♭',
-    type: 'flat'
+    name: 'E♭'
   },
   {
-    name: 'E',
-    type: 'natural'
+    name: 'E'
   },
   {
-    name: 'F',
-    type: 'natural'
+    name: 'F'
   },
   {
-    name: 'F♯',
-    type: 'sharp'
+    name: 'F♯'
   },
   {
-    name: 'G♭',
-    type: 'flat'
+    name: 'G♭'
   },
   {
-    name: 'G',
-    type: 'natural'
+    name: 'G'
   },
   {
-    name: 'G♯',
-    type: 'sharp'
+    name: 'G♯'
   },
   {
-    name: 'A♭',
-    type: 'flat'
+    name: 'A♭'
   },
   {
-    name: 'A',
-    type: 'natural'
+    name: 'A'
   },
   {
-    name: 'A♯',
-    type: 'sharp'
+    name: 'A♯'
   },
   {
-    name: 'B♭',
-    type: 'flat'
+    name: 'B♭'
   },
   {
-    name: 'B',
-    type: 'natural'
+    name: 'B'
   }
 ]
 
 notes.each do |note|
   Note.create(
-    name: note[:name],
-    type: note[:type]
+    name: note[:name]
   )
 end
 
