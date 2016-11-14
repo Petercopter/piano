@@ -66,6 +66,94 @@ notes = [
   }
 ]
 
+keys = [
+  {
+    note: 'C'
+  },
+  {
+    note: 'C♯ D♭',
+    offset: '4%'
+  },
+  {
+    note: 'D'
+  },
+  {
+    note: 'D♯ E♭',
+    offset: '11%'
+  },
+  {
+    note: 'E'
+  },
+  {
+    note: 'F'
+  },
+  {
+    note: 'F♯ G♭',
+    offset: '23.5%'
+  },
+  {
+    note: 'G'
+  },
+  {
+    note: 'G♯ A♭',
+    offset: '30.5%'
+  },
+  {
+    note: 'A'
+  },
+  {
+    note: 'A♯ B♭',
+    offset: '37.5%'
+  },
+  {
+    note: 'B'
+  },
+  {
+    note: 'C'
+  },
+  {
+    note: 'C♯ D♭',
+    offset: '50.5%'
+  },
+  {
+    note: 'D'
+  },
+  {
+    note: 'D♯ E♭',
+    offset: '57.5%'
+  },
+  {
+    note: 'E'
+  },
+  {
+    note: 'F'
+  },
+  {
+    note: 'F♯ G♭',
+    offset: '70.5%'
+  },
+  {
+    note: 'G'
+  },
+  {
+    note: 'G♯ A♭',
+    offset: '77.5%'
+  },
+  {
+    note: 'A'
+  },
+  {
+    note: 'A♯ B♭',
+    offset: '84%'
+  },
+  {
+    note: 'B'
+  },
+  {
+    note: 'C'
+  }
+]
+
 notes.each do |note|
   Note.create(
     name: note[:name]
@@ -82,4 +170,11 @@ notes.each do |note|
       }
     )
   }
+end
+
+keys.each do |key|
+  Key.create(
+    notes: key[:note].split(' ').map{ |note| Note.find_by(name: note) },
+    offset: key[:offset]
+  )
 end
