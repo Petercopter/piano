@@ -4,7 +4,6 @@ class Scale < ApplicationRecord
   belongs_to :note
   has_many :keys_scales
   has_many :keys, through: :keys_scales
-  has_many :notes, through: :keys_scales
 
   # validates :note, :notes, :type, presence: true
 

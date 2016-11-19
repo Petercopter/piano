@@ -15,7 +15,7 @@ table
       tr
         td= scale.note.name
         td= scale.type
-        td= scale.notes.map(&:name).join(', ')
+        td= scale.keys.flat_map(&:notes).flat_map(&:name).join(', ')
         td = link_to 'Show', scale
         td = link_to 'Edit', edit_scale_path(scale)
         td = link_to 'Destroy', scale, data: { confirm: 'Are you sure?' }, method: :delete

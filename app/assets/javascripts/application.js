@@ -1,3 +1,6 @@
+//= require jquery
+//= require jquery_ujs
+
 //= require lodash/lodash
 
 // NOTE: react components must be loaded in this order

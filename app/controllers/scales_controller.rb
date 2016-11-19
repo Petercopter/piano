@@ -5,11 +5,17 @@ class ScalesController < ApplicationController
   # GET /scales.json
   def index
     @scales = Scale.all
+
+    respond_to do |format|
+      format.html {}
+      format.json { render json: @scales }
+    end
   end
 
   # GET /scales/1
   # GET /scales/1.json
   def show
+    render json: @scale, include: [{ keys: :notes }, :note]
   end
 
   # GET /scales/new
@@ -40,7 +46,6 @@ class ScalesController < ApplicationController
   # PATCH/PUT /scales/1
   # PATCH/PUT /scales/1.json
   def update
-    binding.pry
     respond_to do |format|
       if @scale.update(scale_params)
         format.html { redirect_to @scale, notice: 'Scale was successfully updated.' }

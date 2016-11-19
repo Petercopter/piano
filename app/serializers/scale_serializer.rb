@@ -1,5 +1,5 @@
 class ScaleSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :type
 
   belongs_to :note
   has_many :keys
