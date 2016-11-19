@@ -1,0 +1,7 @@
+= simple_form_for(@scale) do |f|
+  = f.error_notification
+
+  = f.association :note
+  = f.input :type, collection: Scale.types.keys, label_method: :capitalize
+  = f.association :notes, as: :check_boxes
+  = f.button :submit

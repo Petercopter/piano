@@ -51,4 +51,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
 gem 'bower-rails'
 gem 'react-rails'
-gem 'slim'
+gem 'slim-rails'
+gem 'active_model_serializers'
+gem 'simple_form'

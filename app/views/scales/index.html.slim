@@ -1,0 +1,25 @@
+h1 Listing scales
+
+table
+  thead
+    tr
+      th
+      th
+      th
+      th
+      th
+      th
+
+  tbody
+    - @scales.each do |scale|
+      tr
+        td= scale.note.name
+        td= scale.type
+        td= scale.notes.map(&:name).join(', ')
+        td = link_to 'Show', scale
+        td = link_to 'Edit', edit_scale_path(scale)
+        td = link_to 'Destroy', scale, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Scale', new_scale_path
