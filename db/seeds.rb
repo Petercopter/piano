@@ -160,17 +160,17 @@ notes.each do |note|
   )
 end
 
-notes.each do |note|
-  note[:scales].to_a.map{ |scale|
-    Scale.create(
-      type: scale[:type],
-      note: Note.find_by(name: note[:name]),
-      notes: scale[:notes].map{ |note|
-        Note.find_by(name: note)
-      }
-    )
-  }
-end
+# notes.each do |note|
+#   note[:scales].to_a.map{ |scale|
+#     Scale.create(
+#       type: scale[:type],
+#       note: Note.find_by(name: note[:name]),
+#       notes: scale[:notes].map{ |note|
+#         Note.find_by(name: note)
+#       }
+#     )
+#   }
+# end
 
 keys.each do |key|
   Key.create(

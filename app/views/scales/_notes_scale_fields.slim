@@ -1,0 +1,5 @@
+li.nested-fields.form-group
+  = f.hidden_field :position, class: 'notes-scales-position'
+  ul.list-inline
+    li= f.association :note, label: false, wrapper: false
+    li= link_to_remove_association 'remove', f

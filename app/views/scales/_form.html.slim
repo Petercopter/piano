@@ -1,7 +1,12 @@
-= simple_form_for(@scale) do |f|
-  = f.error_notification
+.row
+  .col-xs-4
+    = simple_form_for(@scale) do |f|
+      = f.error_notification
 
-  = f.association :note
-  = f.input :type, collection: Scale.types.keys, label_method: :capitalize
-  = f.association :notes, as: :check_boxes
-  = f.button :submit
+      = f.association :note
+      = f.input :type, collection: Scale.types.keys, label_method: :capitalize
+      
+      = f.association :keys, as: :check_boxes, label_method: ->(object) { object.notes.map(&:name).join(' ') }
+      
+      .row
+        .col-xs-offset-6.col-xs-6= f.button :submit, class: 'btn btn-default btn-block'

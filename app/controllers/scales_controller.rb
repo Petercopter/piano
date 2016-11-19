@@ -40,6 +40,7 @@ class ScalesController < ApplicationController
   # PATCH/PUT /scales/1
   # PATCH/PUT /scales/1.json
   def update
+    binding.pry
     respond_to do |format|
       if @scale.update(scale_params)
         format.html { redirect_to @scale, notice: 'Scale was successfully updated.' }
@@ -69,6 +70,6 @@ class ScalesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def scale_params
-      params.fetch(:scale, {}).permit(:note_id, { note_ids: [] }, :type)
+      params.fetch(:scale, {}).permit({ key_ids: [] }, :note_id, :type)
     end
 end
