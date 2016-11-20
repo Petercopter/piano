@@ -1,5 +1,5 @@
 class KeySerializer < ActiveModel::Serializer
-  attributes :id, :offset
+  attributes :id
 
   has_many :notes
 end

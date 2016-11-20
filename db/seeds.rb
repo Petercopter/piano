@@ -71,15 +71,13 @@ keys = [
     note: 'C'
   },
   {
-    note: 'C♯ D♭',
-    offset: '4%'
+    note: 'C♯ D♭'
   },
   {
     note: 'D'
   },
   {
-    note: 'D♯ E♭',
-    offset: '11%'
+    note: 'D♯ E♭'
   },
   {
     note: 'E'
@@ -88,22 +86,19 @@ keys = [
     note: 'F'
   },
   {
-    note: 'F♯ G♭',
-    offset: '23.5%'
+    note: 'F♯ G♭'
   },
   {
     note: 'G'
   },
   {
-    note: 'G♯ A♭',
-    offset: '30.5%'
+    note: 'G♯ A♭'
   },
   {
     note: 'A'
   },
   {
-    note: 'A♯ B♭',
-    offset: '37.5%'
+    note: 'A♯ B♭'
   },
   {
     note: 'B'
@@ -112,15 +107,13 @@ keys = [
     note: 'C'
   },
   {
-    note: 'C♯ D♭',
-    offset: '50.5%'
+    note: 'C♯ D♭'
   },
   {
     note: 'D'
   },
   {
-    note: 'D♯ E♭',
-    offset: '57.5%'
+    note: 'D♯ E♭'
   },
   {
     note: 'E'
@@ -129,22 +122,19 @@ keys = [
     note: 'F'
   },
   {
-    note: 'F♯ G♭',
-    offset: '70.5%'
+    note: 'F♯ G♭'
   },
   {
     note: 'G'
   },
   {
-    note: 'G♯ A♭',
-    offset: '77.5%'
+    note: 'G♯ A♭'
   },
   {
     note: 'A'
   },
   {
-    note: 'A♯ B♭',
-    offset: '84%'
+    note: 'A♯ B♭'
   },
   {
     note: 'B'
@@ -174,7 +164,6 @@ end
 
 keys.each do |key|
   Key.create(
-    notes: key[:note].split(' ').map{ |note| Note.find_by(name: note) },
-    offset: key[:offset]
+    notes: key[:note].split(' ').map{ |note| Note.find_by(name: note) }
   )
 end

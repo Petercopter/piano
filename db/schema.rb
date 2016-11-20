@@ -13,7 +13,6 @@
 ActiveRecord::Schema.define(version: 20161114071032) do
 
   create_table "keys", force: :cascade do |t|
-    t.float    "offset"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

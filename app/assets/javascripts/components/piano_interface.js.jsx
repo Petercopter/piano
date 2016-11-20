@@ -11,7 +11,7 @@ class PianoInterface extends React.Component {
 
   componentWillMount() {
     $.getJSON('/scales', (data) => this.setState({ scales: data }))
-    $.getJSON('/scales/2', (data) => this.setState({ scale: data }))
+    $.getJSON('/scales/1', (data) => this.setState({ scale: data }))
   }
 
   handleScaleClick(scale, event) {

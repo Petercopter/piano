@@ -7,7 +7,6 @@ class ScaleSerializer < ActiveModel::Serializer
   class KeysScaleSerializer < ActiveModel::Serializer
     attribute(:id) { object.key.id }
     attribute(:name) { object.note.name }
-    attribute(:offset) { object.key.offset }
     attributes :finger_left, :finger_right
   end
 end
