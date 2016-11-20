@@ -1,5 +1,6 @@
 #piano-wrapper {
   border: 1px solid #000;
+  margin-bottom: 15px;
   padding-top: 50%;
   position: relative;
 }
@@ -8,7 +9,6 @@
   @extend .list-unstyled;
   display: flex;
   height: 100%;
-  margin-bottom: 15px;
   position: absolute;
   text-align: center;
   top: 0;

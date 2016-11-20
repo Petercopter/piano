@@ -15,7 +15,7 @@ class ScalesController < ApplicationController
   # GET /scales/1
   # GET /scales/1.json
   def show
-    render json: @scale, include: [{ keys: :notes }, :note]
+    render json: @scale#, include: [{ keys: :notes }, :note, :notes]
   end
 
   # GET /scales/new
