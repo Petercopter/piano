@@ -1,10 +1,8 @@
-h1 Listing scales
+h1 Scales
 
-table
+table.table
   thead
     tr
-      th
-      th
       th
       th
       th
@@ -13,10 +11,24 @@ table
   tbody
     - @scales.each do |scale|
       tr
-        td= scale.note.name
-        td= scale.type
-        td= scale.keys.flat_map(&:notes).flat_map(&:name).join(', ')
-        td = link_to 'Show', scale
+        td
+          => scale.note.name
+          = scale.type.titleize
+        td
+          ul.list-inline
+            li
+              | &nbsp;
+              br
+              strong L
+              br
+              strong R
+            - scale.keys_scales.each do |keys_scale|
+              li
+                strong= keys_scale.note.name
+                br
+                = keys_scale.finger_left
+                br
+                = keys_scale.finger_right
         td = link_to 'Edit', edit_scale_path(scale)
         td = link_to 'Destroy', scale, data: { confirm: 'Are you sure?' }, method: :delete
 

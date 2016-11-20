@@ -10,3 +10,7 @@
 //= require react-bootstrap
 //= require react_ujs
 //= require components
+
+//= require cocoon
+
+//= require pianos

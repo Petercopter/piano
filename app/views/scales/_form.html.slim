@@ -1,12 +1,23 @@
 .row
-  .col-xs-4
+  .col-xs-5
     = simple_form_for(@scale) do |f|
       = f.error_notification
 
-      = f.association :note
-      = f.input :type, collection: Scale.types.keys, label_method: :capitalize
+      .row
+        .col-xs-6= f.association :note
+        .col-xs-6= f.input :type, collection: Scale.types.keys, label_method: :capitalize
       
-      = f.association :keys, as: :check_boxes, label_method: ->(object) { object.notes.map(&:name).join(' ') }
-      
+      h4 Keys
+      .row
+        .col-xs-3: label Key
+        .col-xs-3: label Note
+        .col-xs-2: label Left
+        .col-xs-2: label Right
+
+      #keys-scales
+        = f.simple_fields_for :keys_scales do |keys_scale|
+          = render 'keys_scale_fields', f: keys_scale
+        .links.pull-right.form-group= link_to_add_association icon('plus'), f, :keys_scales, class: 'btn btn-success'
+
       .row
         .col-xs-offset-6.col-xs-6= f.button :submit, class: 'btn btn-default btn-block'

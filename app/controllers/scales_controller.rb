@@ -21,6 +21,7 @@ class ScalesController < ApplicationController
   # GET /scales/new
   def new
     @scale = Scale.new
+    @scale.keys_scales.build
   end
 
   # GET /scales/1/edit
@@ -34,9 +35,10 @@ class ScalesController < ApplicationController
 
     respond_to do |format|
       if @scale.save
-        format.html { redirect_to @scale, notice: 'Scale was successfully created.' }
+        format.html { redirect_to scales_path, notice: 'Scale was successfully created.' }
         format.json { render :show, status: :created, location: @scale }
       else
+        binding.pry
         format.html { render :new }
         format.json { render json: @scale.errors, status: :unprocessable_entity }
       end
@@ -48,7 +50,7 @@ class ScalesController < ApplicationController
   def update
     respond_to do |format|
       if @scale.update(scale_params)
-        format.html { redirect_to @scale, notice: 'Scale was successfully updated.' }
+        format.html { redirect_to scales_path, notice: 'Scale was successfully updated.' }
         format.json { render :show, status: :ok, location: @scale }
       else
         format.html { render :edit }
@@ -68,13 +70,14 @@ class ScalesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_scale
-      @scale = Scale.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def scale_params
-      params.fetch(:scale, {}).permit({ key_ids: [] }, :note_id, :type)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_scale
+    @scale = Scale.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def scale_params
+    params.fetch(:scale, {}).permit({ keys_scales_attributes: [:_destroy, :finger_left, :finger_right, :id, :key_id, :note_id] }, :note_id, :type)
+  end
 end

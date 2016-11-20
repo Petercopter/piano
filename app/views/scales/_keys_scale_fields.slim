@@ -1,0 +1,12 @@
+.nested-fields
+  .row
+    .col-xs-3
+      = f.association :key, label: false, label_method: ->(object){["#{object.id}.", object.notes.map(&:name).join(' ')].join(' ')}, input_html: { class: 'dependent-key-select' }
+    .col-xs-3
+      = f.association :note, label: false, input_html: { class: 'dependent-note-select' }
+    .col-xs-2
+      = f.input :finger_left, label: false, collection: (1..5)
+    .col-xs-2
+      = f.input :finger_right, label: false, collection: (1..5)
+    .col-xs-2.text-right
+      = link_to_remove_association icon('close'), f, class: 'btn btn-danger'

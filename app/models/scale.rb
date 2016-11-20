@@ -4,9 +4,10 @@ class Scale < ApplicationRecord
   belongs_to :note
   has_many :keys_scales
   has_many :keys, through: :keys_scales
-
-  # validates :note, :notes, :type, presence: true
+  has_many :notes, through: :keys_scales
 
   enum type: [:major, :minor]
+
+  accepts_nested_attributes_for :keys_scales, reject_if: :all_blank, allow_destroy: true
 
 end

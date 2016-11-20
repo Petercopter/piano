@@ -29,10 +29,14 @@ ActiveRecord::Schema.define(version: 20161114071032) do
 
   create_table "keys_scales", force: :cascade do |t|
     t.integer  "key_id"
+    t.integer  "note_id"
     t.integer  "scale_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "finger_left"
+    t.integer  "finger_right"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.index ["key_id"], name: "index_keys_scales_on_key_id"
+    t.index ["note_id"], name: "index_keys_scales_on_note_id"
     t.index ["scale_id"], name: "index_keys_scales_on_scale_id"
   end
 
