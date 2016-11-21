@@ -25,20 +25,22 @@ class PianoInterface extends React.Component {
 
       const { Col, Panel } = ReactBootstrap
 
-      const notesDisplayItems = this.state.scale.keys.map((key, index) =>
-        <li key={index}>
-          <strong>{key.name}</strong>
-          <br />
-          {key.finger_left}
-          <br />
-          {key.finger_right}
-        </li>
-      )
-
       const scales = this.state.scales.map((scale) =>
         <li key={scale.id}>
           <a onClick={()=>{this.handleScaleClick(scale)}}>{[scale.note.name, scale.type].join(' ')}</a>
         </li>
+      )
+
+      const scaleTableHeaderCells = this.state.scale.keys.map((key, index) =>
+        <th key={index}>{key.name}</th>
+      )
+
+      const scaleTableFingerLeftCells = this.state.scale.keys.map((key) =>
+        <td className={`finger-${key.finger_left}`} key={key.id}>{key.finger_left}</td>
+      )
+
+      const scaleTableFingerRightCells = this.state.scale.keys.map((key) =>
+        <td className={`finger-${key.finger_right}`} key={key.id}>{key.finger_right}</td>
       )
 
       return(
@@ -51,16 +53,27 @@ class PianoInterface extends React.Component {
               </ul>
             </Col>
             <Col xs={6}>
-              <ul className='list-inline'>
-                <li>
-                  &nbsp;
-                  <br />
-                  <strong>L</strong>
-                  <br />
-                  <strong>R</strong>
-                </li>
-                {notesDisplayItems}
-              </ul>
+              <table className="scale-table">
+                <thead>
+                  <tr>
+                    <th></th>
+                    {scaleTableHeaderCells}
+                    <th><i className="fa fa-border fa-eye-slash"></i> No Color</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>L</td>
+                    {scaleTableFingerLeftCells}
+                    <td><i className="fa fa-border fa-eye"></i> Show Left</td>
+                  </tr>
+                  <tr>
+                    <td>R</td>
+                    {scaleTableFingerRightCells}
+                    <td><i className="fa fa-border fa-eye"></i> Show Right</td>
+                  </tr>
+                </tbody>
+              </table>
             </Col>
           </Panel>
         </div>

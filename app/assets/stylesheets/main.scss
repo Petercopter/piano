@@ -1,7 +1,13 @@
+$finger-color-1: #19a78c;
+$finger-color-2: #ea9901;
+$finger-color-3: #c205ff;
+$finger-color-4: #009bf2;
+$finger-color-5: #ea5b3e;
+
 #piano-wrapper {
   border: 1px solid #000;
   margin-bottom: 15px;
-  padding-top: 50%;
+  padding-top: 40%;
   position: relative;
 }
 
@@ -17,10 +23,7 @@
   li {
     display: flex;
     flex-grow: 1;
-
-    &:last-child {
-      border-right: 0;
-    }
+    padding-bottom: 5px;
 
     &:nth-child(2) {
       left: 4%;
@@ -63,18 +66,43 @@
     }
 
     &.black {
-      background: #000;
+      background-color: #000;
       border-color: #000;
       border-style: solid;
-      border-width: 0 2px 1px;
+      border-width: 0 1px 1px;
       color: #fff;
-      padding: 33% 0 5px;
+      padding-top: 23%;
       position: absolute;
       width: 5.2%;
     }
 
     &.white {
       border-right: 1px solid #000;
+      font-weight: bold;
+    }
+
+    &.finger-1 {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, $finger-color-1);
+    }
+
+    &.finger-2 {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, $finger-color-2);
+    }
+
+    &.finger-3 {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, $finger-color-3);
+    }
+
+    &.finger-4 {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, $finger-color-4);
+    }
+
+    &.finger-5 {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, $finger-color-5);
+    }
+
+    &:last-child {
+      border-right: 0;
     }
 
     .key-label {
@@ -84,6 +112,28 @@
   }
 }
 
-.active {
-  background: #666 !important;
+.scale-table {
+  @extend .table;
+  font-weight: bold;
+  width: auto;
+
+  .finger-1 {
+    color: $finger-color-1;
+  }
+
+  .finger-2 {
+    color: $finger-color-2;
+  }
+
+  .finger-3 {
+    color: $finger-color-3;
+  }
+
+  .finger-4 {
+    color: $finger-color-4;
+  }
+
+  .finger-5 {
+    color: $finger-color-5;
+  }
 }
