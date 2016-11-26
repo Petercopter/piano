@@ -15,7 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "react-bootstrap": "^0.30.6",
     "lodash": "^4.16.6"
   }
 }
