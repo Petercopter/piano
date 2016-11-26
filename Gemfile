@@ -48,11 +48,10 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'bootstrap-sass'
-gem 'bower-rails'
-gem 'react-rails'
-gem 'slim-rails'
 gem 'active_model_serializers'
-gem 'simple_form'
+gem 'bootstrap-sass'
 gem 'cocoon'
 gem 'font-awesome-sass'
+gem 'react_on_rails'
+gem 'simple_form'
+gem 'slim-rails'

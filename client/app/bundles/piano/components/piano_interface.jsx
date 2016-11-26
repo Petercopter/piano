@@ -1,4 +1,10 @@
-class PianoInterface extends React.Component {
+import _ from 'lodash'
+import React from 'react'
+import ReactBootstrap, { Col, Panel, Row } from 'react-bootstrap'
+
+import PianoKeys from '../components/piano_keys'
+
+export default class PianoApp extends React.Component {
 
   constructor(props) {
     super(props)
@@ -22,8 +28,6 @@ class PianoInterface extends React.Component {
     if(_.isEmpty(this.state.scale)) {
       return null
     } else {
-
-      const { Col, Panel } = ReactBootstrap
 
       const scales = this.state.scales.map((scale) =>
         <li key={scale.id}>

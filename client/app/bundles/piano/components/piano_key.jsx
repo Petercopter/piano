@@ -1,4 +1,7 @@
-class PianoKey extends React.Component {
+import _ from 'lodash'
+import React from 'react'
+
+export default class PianoKey extends React.Component {
 
   render() {
     const activeClass = _.includes(this.props.scaleKeys.map(scaleKey=>scaleKey.id), this.props.pianoKey.id) ? 'active' : null

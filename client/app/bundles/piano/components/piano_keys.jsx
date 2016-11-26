@@ -1,4 +1,8 @@
-class PianoKeys extends React.Component {
+import React from 'react'
+
+import PianoKey from '../components/piano_key'
+
+export default class PianoKeys extends React.Component {
 
   constructor(props) {
     super(props)
@@ -8,14 +12,18 @@ class PianoKeys extends React.Component {
     }
   }
 
+  static defaultProps = {
+    scaleKeys: []
+  }
+
   componentWillMount() {
     $.getJSON('/keys', (data) => this.setState({pianoKeys: data }))
   }
 
   render() {
-    const pianoKeyItems = this.state.pianoKeys.map((pianoKey) =>
+    const pianoKeyItems = [this.state.pianoKeys.map((pianoKey) =>
       <PianoKey key={pianoKey.id} pianoKey={pianoKey} scaleKeys={this.props.scaleKeys} />
-    )
+    )]
     return(
       <div id="piano-wrapper">
         <ul id="piano">
@@ -24,8 +32,4 @@ class PianoKeys extends React.Component {
       </div>
     )
   }
-}
-
-PianoKeys.defaultProps = {
-  scaleKeys: []
 }
