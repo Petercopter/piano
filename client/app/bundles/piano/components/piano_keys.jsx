@@ -21,9 +21,9 @@ export default class PianoKeys extends React.Component {
   }
 
   render() {
-    const pianoKeyItems = [this.state.pianoKeys.map((pianoKey) =>
+    const pianoKeyItems = this.state.pianoKeys.map((pianoKey) =>
       <PianoKey key={pianoKey.id} pianoKey={pianoKey} scaleKeys={this.props.scaleKeys} />
-    )]
+    )
     return(
       <div id="piano-wrapper">
         <ul id="piano">
