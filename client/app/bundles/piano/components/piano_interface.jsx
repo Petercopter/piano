@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactBootstrap from 'react-bootstrap'
 import { Col, Panel, Row } from 'react-bootstrap'
-import ReactOnRails from 'react-on-rails'
 
 import PianoKeys from '../components/piano_keys'
 
@@ -86,5 +85,3 @@ export default class PianoApp extends React.Component {
     }
   }
 }
-
-ReactOnRails.register({ PianoApp });

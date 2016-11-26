@@ -1,6 +1,4 @@
 import React from 'react'
-import ReactBootstrap from 'react-bootstrap'
-import ReactOnRails from 'react-on-rails'
 
 export default class PianoKey extends React.Component {
 
@@ -18,7 +16,7 @@ export default class PianoKey extends React.Component {
             )
           }
         </div>
-      </li></div>
+      </li>
     )
   }
 }

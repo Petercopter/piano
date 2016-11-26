@@ -1,8 +1,6 @@
 import React from 'react'
-import ReactBootstrap from 'react-bootstrap'
-import ReactOnRails from 'react-on-rails'
 
-import PianoKeys from '../components/piano_key'
+import PianoKey from '../components/piano_key'
 
 export default class PianoKeys extends React.Component {
 
