@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-dom'
+import {render} from 'react-dom'
 
 import Piano from 'piano/piano'
 
@@ -12,22 +12,23 @@ const dynamicInjectionElements = document.querySelectorAll('[data-inject-react-c
 // Only iterate if there's any element
 if (dynamicInjectionElements !== null)
   dynamicInjectionElements.forEach(element => {
-    const componentName = element.getAttribute('data-inject-react-class');
+    const componentName = element.getAttribute('data-inject-react-class')
+    const props = JSON.parse(element.getAttribute('data-react-props'))
 
     const ReactComponent = ((str) => {
       if (typeof str !== 'string')
-        throw new TypeError('must pass in type of string/')
+        throw new TypeError('must pass in type of string.')
 
       if (str.match(/\W|\d/))
         throw new SyntaxError(`${str}: must pass in a valid Javascript name.`)
 
       const component = RailsViewComponents[str]
+
       if (!component)
-        throw `Invalid component: \`${componentName}\` does not exist.`
+        throw `Invalid component: \`${str}\` does not exist.`
 
       return component
     })(componentName)
 
-    const props = JSON.parse(element.getAttribute('data-react-props'))
     render(<ReactComponent {...props} />, element)
   })
