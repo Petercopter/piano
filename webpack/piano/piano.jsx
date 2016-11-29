@@ -2,9 +2,9 @@ import _ from 'lodash'
 import React from 'react'
 import ReactBootstrap, { Col, Panel, Row } from 'react-bootstrap'
 
-import PianoKeys from '../components/piano_keys'
+import PianoKeys from './piano_keys'
 
-export default class PianoApp extends React.Component {
+export default class Piano extends React.Component {
 
   constructor(props) {
     super(props)

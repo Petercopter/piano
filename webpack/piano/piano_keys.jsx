@@ -1,6 +1,6 @@
 import React from 'react'
 
-import PianoKey from '../components/piano_key'
+import PianoKey from './piano_key'
 
 export default class PianoKeys extends React.Component {
 
@@ -10,10 +10,6 @@ export default class PianoKeys extends React.Component {
     this.state = {
       pianoKeys: []
     }
-  }
-
-  static defaultProps = {
-    scaleKeys: []
   }
 
   componentWillMount() {
@@ -32,4 +28,8 @@ export default class PianoKeys extends React.Component {
       </div>
     )
   }
+}
+
+PianoKey.defaultProps = {
+  scaleKeys: []
 }
