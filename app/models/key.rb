@@ -1,6 +1,6 @@
-class Key < ApplicationRecord
-  has_many :keys_notes
-  has_many :notes, through: :keys_notes
-  has_many :keys_scales
-  has_many :scales, through: :keys_scales
+class PianoKey < ApplicationRecord
+  has_many :piano_keys_pitches
+  has_many :pitches, through: :piano_keys_pitches
+  has_many :piano_keys_scales
+  has_many :scales, through: :piano_keys_scales
 end

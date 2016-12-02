@@ -15,13 +15,13 @@ class ScalesController < ApplicationController
   # GET /scales/1
   # GET /scales/1.json
   def show
-    render json: @scale#, include: [{ keys: :notes }, :note, :notes]
+    render json: @scale
   end
 
   # GET /scales/new
   def new
     @scale = Scale.new
-    @scale.keys_scales.build
+    @scale.piano_keys_scales.build
   end
 
   # GET /scales/1/edit
@@ -78,6 +78,6 @@ class ScalesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def scale_params
-    params.fetch(:scale, {}).permit({ keys_scales_attributes: [:_destroy, :finger_left, :finger_right, :id, :key_id, :note_id] }, :note_id, :type)
+    params.fetch(:scale, {}).permit({ piano_keys_scales_attributes: [:_destroy, :finger_left, :finger_right, :id, :piano_key_id, :pitch_id] }, :pitch_id, :type)
   end
 end

@@ -4,20 +4,20 @@
       = f.error_notification
 
       .row
-        .col-xs-6= f.association :note
-        .col-xs-6= f.input :type, collection: Scale.types.keys, label_method: :capitalize
+        .col-xs-6= f.association :pitch
+        .col-xs-6= f.input :type, collection: Scale.types.piano_keys, label_method: :capitalize
       
       h4 Keys
       .row
         .col-xs-3: label Key
-        .col-xs-3: label Note
+        .col-xs-3: label Pitch
         .col-xs-2: label Left
         .col-xs-2: label Right
 
-      #keys-scales
-        = f.simple_fields_for :keys_scales do |keys_scale|
-          = render 'keys_scale_fields', f: keys_scale
-        .links.pull-right.form-group= link_to_add_association icon('plus'), f, :keys_scales, class: 'btn btn-success'
+      #piano-keys-scales
+        = f.simple_fields_for :piano_keys_scales do |piano_keys_scale|
+          = render 'piano_keys_scale_fields', f: piano_keys_scale
+        .links.pull-right.form-group= link_to_add_association icon('plus'), f, :piano_keys_scales, class: 'btn btn-success'
 
       .row
         .col-xs-offset-6.col-xs-6= f.button :submit, class: 'btn btn-default btn-block'

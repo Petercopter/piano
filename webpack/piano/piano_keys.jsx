@@ -13,7 +13,7 @@ export default class PianoKeys extends React.Component {
   }
 
   componentWillMount() {
-    $.getJSON('/keys', (data) => this.setState({pianoKeys: data }))
+    $.getJSON('/piano_keys', (data) => this.setState({pianoKeys: data }))
   }
 
   render() {

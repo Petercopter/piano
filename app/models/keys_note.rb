@@ -1,4 +1,4 @@
-class KeysNote < ApplicationRecord
-  belongs_to :key
-  belongs_to :note
+class PianoKeysPitch < ApplicationRecord
+  belongs_to :piano_key
+  belongs_to :pitch
 end

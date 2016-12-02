@@ -1,3 +1,3 @@
-class Note < ApplicationRecord
+class Pitch < ApplicationRecord
   has_many :scales
 end
