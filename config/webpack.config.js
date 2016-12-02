@@ -14,7 +14,7 @@ var production = process.env.NODE_ENV === 'production';
 var config = {
   entry: {
     // Sources are expected to live in $app_root/webpack
-    'application': './webpack/application.js'
+    'application': ['babel-polyfill', './webpack/application.js']
   },
 
   output: {
@@ -48,11 +48,11 @@ var config = {
     loaders: [
       {
         exclude: /node_modules/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
           plugins: ['transform-runtime'],
-          presets: ['es2015', 'stage-0', 'react'],
-        }
+          presets: ['es2015', 'react'],
+        },
         target: 'webpack',
         test: /\.jsx?$/
       }
