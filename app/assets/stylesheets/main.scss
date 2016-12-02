@@ -76,9 +76,17 @@ $finger-color-5: #ea5b3e;
       width: 5.2%;
     }
 
+    &.black.active {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #989898);
+    }
+
     &.white {
       border-right: 1px solid #000;
       font-weight: bold;
+    }
+
+    &.white.active {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #ccc);
     }
 
     &.finger-1 {
