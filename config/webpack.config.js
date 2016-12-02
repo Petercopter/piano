@@ -47,10 +47,14 @@ var config = {
   module: {
     loaders: [
       {
-        test: /\.jsx?$/,
+        exclude: /node_modules/,
         loader: 'babel',
+        query: {
+          plugins: ['transform-runtime'],
+          presets: ['es2015', 'stage-0', 'react'],
+        }
         target: 'webpack',
-        exclude: /node_modules/
+        test: /\.jsx?$/
       }
     ]
   }
