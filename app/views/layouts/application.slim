@@ -15,3 +15,4 @@ html
     
     .container= yield
     = javascript_include_tag *webpack_asset_paths('application')
+    = javascript_include_tag('http://localhost:3808/webpack-dev-server.js') if Rails.env.development?
