@@ -31,8 +31,22 @@ export default class Piano extends React.Component {
       return null
     } else {
 
+      const categories = (
+        <Tabs defaultActiveKey={1} id="category-tabs">
+          <Tab eventKey={1} title="Pitches">Pitches</Tab>
+          <Tab eventKey={2} title="Scales">Scales</Tab>
+          <Tab eventKey={3} title="Chords">Chords</Tab>
+        </Tabs>
+      )
+
       const pitches = this.state.pitches.map((pitch) =>
-        <Tab eventKey={pitch.id} key={pitch.id} title={pitch.name}>{pitch.name}</Tab>
+        <Tab eventKey={pitch.id} key={pitch.id} title={pitch.name}>
+          <Tabs defaultActiveKey={1} id="category-tabs">
+            <Tab eventKey={1} title="Scales">Scales</Tab>
+            <Tab eventKey={2} title="Chords">Chords</Tab>
+          </Tabs>
+          <h4>{pitch.name}</h4>
+        </Tab>
       )
 
       const scales = this.state.scales.map((scale) =>
@@ -57,8 +71,14 @@ export default class Piano extends React.Component {
         <div>
           <PianoKeys scaleKeys={this.state.scale.piano_keys}></PianoKeys>
           <Panel>
-            <Tabs defaultActiveKey={this.state.pitches[0].id} id="pitch-tabs">
-              {pitches}
+            <Tabs defaultActiveKey={1} id="category-tabs">
+              <Tab eventKey={1} title="Pitches">
+                <Tabs defaultActiveKey={this.state.pitches[0].id} id="pitch-tabs">
+                  {pitches}
+                </Tabs>
+              </Tab>
+              <Tab eventKey={2} title="Scales">Scales</Tab>
+              <Tab eventKey={3} title="Chords">Chords</Tab>
             </Tabs>
             <ul className="list-unstyled">
               {scales}
