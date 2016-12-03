@@ -11,7 +11,7 @@ export default class PianoKey extends React.Component {
     const fingerClasses = null
     return(
       <li className={[className, activeClass, fingerClasses].join(' ')}>
-        <div className="key-label">
+        <div className="piano-key-label">
           {
             this.props.pianoKey.pitches.map((pitch, index) =>
               <div key={index}>{pitch.name}</div>

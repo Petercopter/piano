@@ -1,7 +1,7 @@
 .nested-fields
   .row
     .col-xs-3
-      = f.association :key, label: false, label_method: ->(object){["#{object.id}.", object.pitches.map(&:name).join(' ')].join(' ')}, input_html: { class: 'dependent-piano-key-select' }
+      = f.association :piano_key, label: false, label_method: ->(object){["#{object.id}.", object.pitches.map(&:name).join(' ')].join(' ')}, input_html: { class: 'dependent-piano-key-select' }
     .col-xs-3
       = f.association :pitch, label: false, input_html: { class: 'dependent-pitch-select' }
     .col-xs-2

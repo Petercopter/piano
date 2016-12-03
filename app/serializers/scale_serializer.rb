@@ -2,7 +2,7 @@ class ScaleSerializer < ActiveModel::Serializer
   attributes :id, :type
 
   belongs_to :pitch
-  has_many :piano_keys_scales, piano_key: :piano_keys
+  has_many :piano_keys_scales, key: :piano_keys
 
   class PianoKeysScaleSerializer < ActiveModel::Serializer
     attribute(:id) { object.piano_key.id }

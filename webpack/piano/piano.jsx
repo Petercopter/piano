@@ -43,7 +43,7 @@ export default class Piano extends React.Component {
         <td className={`finger-${key.finger_left}`} key={key.id}>{key.finger_left}</td>
       )
 
-      const scaleTableFingerRightCells = this.state.scale.keys.map((key) =>
+      const scaleTableFingerRightCells = this.state.scale.piano_keys.map((key) =>
         <td className={`finger-${key.finger_right}`} key={key.id}>{key.finger_right}</td>
       )
 

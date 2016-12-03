@@ -145,7 +145,7 @@ piano_keys = [
 ]
 
 pitches.each do |pitch|
-  pitch.create(
+  Pitch.create(
     name: pitch[:name]
   )
 end
@@ -164,6 +164,6 @@ end
 
 piano_keys.each do |piano_key|
   PianoKey.create(
-    pitches: key[:pitch].split(' ').map{ |pitch| pitch.find_by(name: pitch) }
+    pitches: piano_key[:pitch].split(' ').map{ |pitch| Pitch.find_by(name: pitch) }
   )
 end
