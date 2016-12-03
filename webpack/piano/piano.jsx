@@ -31,25 +31,25 @@ export default class Piano extends React.Component {
 
       const scales = this.state.scales.map((scale) =>
         <li key={scale.id}>
-          <a onClick={()=>{this.handleScaleClick(scale)}}>{[scale.note.name, scale.type].join(' ')}</a>
+          <a onClick={()=>{this.handleScaleClick(scale)}}>{[scale.pitch.name, scale.type].join(' ')}</a>
         </li>
       )
 
-      const scaleTableHeaderCells = this.state.scale.keys.map((key, index) =>
+      const scaleTableHeaderCells = this.state.scale.piano_keys.map((key, index) =>
         <th key={index}>{key.name}</th>
       )
 
-      const scaleTableFingerLeftCells = this.state.scale.keys.map((key) =>
+      const scaleTableFingerLeftCells = this.state.scale.piano_keys.map((key) =>
         <td className={`finger-${key.finger_left}`} key={key.id}>{key.finger_left}</td>
       )
 
-      const scaleTableFingerRightCells = this.state.scale.keys.map((key) =>
+      const scaleTableFingerRightCells = this.state.scale.piano_keys.map((key) =>
         <td className={`finger-${key.finger_right}`} key={key.id}>{key.finger_right}</td>
       )
 
       return(
         <div>
-          <PianoKeys scaleKeys={this.state.scale.keys}></PianoKeys>
+          <PianoKeys scaleKeys={this.state.scale.piano_keys}></PianoKeys>
           <Panel>
             <Col xs={6}>
               <ul className="list-unstyled">

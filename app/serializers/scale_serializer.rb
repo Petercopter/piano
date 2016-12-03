@@ -1,12 +1,12 @@
 class ScaleSerializer < ActiveModel::Serializer
   attributes :id, :type
 
-  belongs_to :note
-  has_many :keys_scales, key: :keys
+  belongs_to :pitch
+  has_many :piano_keys_scales, key: :piano_keys
 
-  class KeysScaleSerializer < ActiveModel::Serializer
-    attribute(:id) { object.key.id }
-    attribute(:name) { object.note.name }
+  class PianoKeysScaleSerializer < ActiveModel::Serializer
+    attribute(:id) { object.piano_key.id }
+    attribute(:name) { object.pitch.name }
     attributes :finger_left, :finger_right
   end
 end

@@ -12,34 +12,34 @@
 
 ActiveRecord::Schema.define(version: 20161114071032) do
 
-  create_table "keys", force: :cascade do |t|
+  create_table "piano_keys", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "keys_notes", force: :cascade do |t|
-    t.integer  "key_id"
-    t.integer  "note_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["key_id"], name: "index_keys_notes_on_key_id"
-    t.index ["note_id"], name: "index_keys_notes_on_note_id"
+  create_table "piano_keys_pitches", force: :cascade do |t|
+    t.integer  "piano_key_id"
+    t.integer  "pitch_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["piano_key_id"], name: "index_piano_keys_pitches_on_piano_key_id"
+    t.index ["pitch_id"], name: "index_piano_keys_pitches_on_pitch_id"
   end
 
-  create_table "keys_scales", force: :cascade do |t|
-    t.integer  "key_id"
-    t.integer  "note_id"
+  create_table "piano_keys_scales", force: :cascade do |t|
+    t.integer  "piano_key_id"
+    t.integer  "pitch_id"
     t.integer  "scale_id"
     t.integer  "finger_left"
     t.integer  "finger_right"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.index ["key_id"], name: "index_keys_scales_on_key_id"
-    t.index ["note_id"], name: "index_keys_scales_on_note_id"
-    t.index ["scale_id"], name: "index_keys_scales_on_scale_id"
+    t.index ["piano_key_id"], name: "index_piano_keys_scales_on_piano_key_id"
+    t.index ["pitch_id"], name: "index_piano_keys_scales_on_pitch_id"
+    t.index ["scale_id"], name: "index_piano_keys_scales_on_scale_id"
   end
 
-  create_table "notes", force: :cascade do |t|
+  create_table "pitches", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -47,10 +47,10 @@ ActiveRecord::Schema.define(version: 20161114071032) do
 
   create_table "scales", force: :cascade do |t|
     t.integer  "type"
-    t.integer  "note_id"
+    t.integer  "pitch_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["note_id"], name: "index_scales_on_note_id"
+    t.index ["pitch_id"], name: "index_scales_on_pitch_id"
   end
 
 end

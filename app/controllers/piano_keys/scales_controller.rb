@@ -1,4 +1,4 @@
-module Keys
+module PianoKeys
   class ScalesController < ApplicationController
 
     def show

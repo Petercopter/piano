@@ -6,13 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-notes = [
+pitches = [
   {
     name: 'C',
     scales: [
       {
         type: 'major',
-        notes: ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C']
+        pitches: ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C']
       }
     ]
   },
@@ -66,104 +66,104 @@ notes = [
   }
 ]
 
-keys = [
+piano_keys = [
   {
-    note: 'C'
+    pitch: 'C'
   },
   {
-    note: 'C♯ D♭'
+    pitch: 'C♯ D♭'
   },
   {
-    note: 'D'
+    pitch: 'D'
   },
   {
-    note: 'D♯ E♭'
+    pitch: 'D♯ E♭'
   },
   {
-    note: 'E'
+    pitch: 'E'
   },
   {
-    note: 'F'
+    pitch: 'F'
   },
   {
-    note: 'F♯ G♭'
+    pitch: 'F♯ G♭'
   },
   {
-    note: 'G'
+    pitch: 'G'
   },
   {
-    note: 'G♯ A♭'
+    pitch: 'G♯ A♭'
   },
   {
-    note: 'A'
+    pitch: 'A'
   },
   {
-    note: 'A♯ B♭'
+    pitch: 'A♯ B♭'
   },
   {
-    note: 'B'
+    pitch: 'B'
   },
   {
-    note: 'C'
+    pitch: 'C'
   },
   {
-    note: 'C♯ D♭'
+    pitch: 'C♯ D♭'
   },
   {
-    note: 'D'
+    pitch: 'D'
   },
   {
-    note: 'D♯ E♭'
+    pitch: 'D♯ E♭'
   },
   {
-    note: 'E'
+    pitch: 'E'
   },
   {
-    note: 'F'
+    pitch: 'F'
   },
   {
-    note: 'F♯ G♭'
+    pitch: 'F♯ G♭'
   },
   {
-    note: 'G'
+    pitch: 'G'
   },
   {
-    note: 'G♯ A♭'
+    pitch: 'G♯ A♭'
   },
   {
-    note: 'A'
+    pitch: 'A'
   },
   {
-    note: 'A♯ B♭'
+    pitch: 'A♯ B♭'
   },
   {
-    note: 'B'
+    pitch: 'B'
   },
   {
-    note: 'C'
+    pitch: 'C'
   }
 ]
 
-notes.each do |note|
-  Note.create(
-    name: note[:name]
+pitches.each do |pitch|
+  Pitch.create(
+    name: pitch[:name]
   )
 end
 
-# notes.each do |note|
-#   note[:scales].to_a.map{ |scale|
+# pitches.each do |pitch|
+#   pitch[:scales].to_a.map{ |scale|
 #     Scale.create(
 #       type: scale[:type],
-#       note: Note.find_by(name: note[:name]),
-#       notes: scale[:notes].map{ |note|
-#         Note.find_by(name: note)
+#       pitch: pitch.find_by(name: pitch[:name]),
+#       pitches: scale[:pitches].map{ |pitch|
+#         pitch.find_by(name: pitch)
 #       }
 #     )
 #   }
 # end
 
-keys.each do |key|
-  Key.create(
-    notes: key[:note].split(' ').map{ |note| Note.find_by(name: note) }
+piano_keys.each do |piano_key|
+  PianoKey.create(
+    pitches: piano_key[:pitch].split(' ').map{ |pitch| Pitch.find_by(name: pitch) }
   )
 end
