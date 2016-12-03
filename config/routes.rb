@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   resources :piano_keys, only: [:index, :show]
   resources :pianos, only: :index
+  resources :pitches
   resources :scales
 end

@@ -38,7 +38,6 @@ class ScalesController < ApplicationController
         format.html { redirect_to scales_path, notice: 'Scale was successfully created.' }
         format.json { render :show, status: :created, location: @scale }
       else
-        binding.pry
         format.html { render :new }
         format.json { render json: @scale.errors, status: :unprocessable_entity }
       end
