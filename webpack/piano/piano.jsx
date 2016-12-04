@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import React from 'react'
-import { Col, Panel, Row, Tab, Tabs } from 'react-bootstrap'
+import { Col, Nav, NavItem, Panel, Row, Tab, Tabs } from 'react-bootstrap'
 
 import PianoKeys from './piano_keys'
 
@@ -41,11 +41,8 @@ export default class Piano extends React.Component {
 
       const pitches = this.state.pitches.map((pitch) =>
         <Tab eventKey={pitch.id} key={pitch.id} title={pitch.name}>
-          <Tabs defaultActiveKey={1} id="category-tabs">
-            <Tab eventKey={1} title="Scales">Scales</Tab>
-            <Tab eventKey={2} title="Chords">Chords</Tab>
-          </Tabs>
-          <h4>{pitch.name}</h4>
+          <h4>Scales</h4>
+          <h4>Chords</h4>
         </Tab>
       )
 
@@ -70,42 +67,40 @@ export default class Piano extends React.Component {
       return(
         <div>
           <PianoKeys scaleKeys={this.state.scale.piano_keys}></PianoKeys>
-          <Panel>
-            <Tabs defaultActiveKey={1} id="category-tabs">
-              <Tab eventKey={1} title="Pitches">
-                <Tabs defaultActiveKey={this.state.pitches[0].id} id="pitch-tabs">
-                  {pitches}
-                </Tabs>
-              </Tab>
-              <Tab eventKey={2} title="Scales">Scales</Tab>
-              <Tab eventKey={3} title="Chords">Chords</Tab>
-            </Tabs>
-            <ul className="list-unstyled">
-              {scales}
-            </ul>
-            <table className="scale-table">
-              <thead>
-                <tr>
-                  <th></th>
-                  {scaleTableHeaderCells}
-                  <th><i className="fa fa-border fa-eye-slash"></i> No Color</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>L</td>
-                  {scaleTableFingerLeftCells}
-                  <td><i className="fa fa-border fa-eye"></i> Show Left</td>
-                </tr>
-                <tr>
-                  <td>R</td>
-                  {scaleTableFingerRightCells}
-                  <td><i className="fa fa-border fa-eye"></i> Show Right</td>
-                </tr>
-              </tbody>
-            </table>
-          </Panel>
-        </div>
+          <Tabs defaultActiveKey={1} id="category-tabs" justified>
+            <Tab eventKey={1} title="Pitches">
+              <Tabs defaultActiveKey={this.state.pitches[0].id} id="pitch-tabs" justified>
+                {pitches}
+              </Tabs>
+            </Tab>
+            <Tab eventKey={2} title="Scales">Scales</Tab>
+            <Tab eventKey={3} title="Chords">Chords</Tab>
+          </Tabs>
+          <ul className="list-unstyled">
+            {scales}
+          </ul>
+          <table className="scale-table">
+            <thead>
+              <tr>
+                <th></th>
+                {scaleTableHeaderCells}
+                <th><i className="fa fa-border fa-eye-slash"></i> No Color</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>L</td>
+                {scaleTableFingerLeftCells}
+                <td><i className="fa fa-border fa-eye"></i> Show Left</td>
+              </tr>
+              <tr>
+                <td>R</td>
+                {scaleTableFingerRightCells}
+                <td><i className="fa fa-border fa-eye"></i> Show Right</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
       )
     }
   }
