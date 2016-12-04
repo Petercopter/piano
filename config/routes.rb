@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :scales, only: [:show]
   end
 
+  resources :chords
   resources :piano_keys, only: [:index, :show]
   resources :pianos, only: :index
   resources :pitches

@@ -1,11 +1,11 @@
 .row
   .col-xs-5
-    = simple_form_for(@scale) do |f|
+    = simple_form_for(@chord) do |f|
       = f.error_notification
 
       .row
         .col-xs-6= f.association :pitch
-        .col-xs-6= f.input :category, collection: Scale.categories.keys, label_method: :capitalize
+        .col-xs-6= f.input :category, collection: Chord.categories.keys, label_method: :titleize
       
       h4 Keys
       .row
