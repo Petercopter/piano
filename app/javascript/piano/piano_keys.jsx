@@ -1,6 +1,6 @@
 import React from 'react'
 
-import PianoKey from './piano_key'
+import PianoKey from 'piano/piano_key'
 
 export default class PianoKeys extends React.Component {
 

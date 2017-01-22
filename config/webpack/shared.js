@@ -13,21 +13,17 @@ module.exports = {
     }, {}
   ),
 
-  output: { filename: '[name].js', path: path.resolve('..', 'public', 'packs') },
+  output: {
+    filename: '[name].js',
+    path: path.resolve('..', 'public', 'packs')
+  },
 
   module: {
     rules: [
-      { test: /\.coffee(.erb)?$/, loader: "coffee-loader" },
       {
         test: /\.jsx?(.erb)?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        options: {
-          presets: [
-            'react',
-            [ 'latest', { 'es2015': { 'modules': false } } ]
-          ]
-        }
       },
       {
         test: /.erb$/,
@@ -44,7 +40,7 @@ module.exports = {
   plugins: [],
 
   resolve: {
-    extensions: [ '.js', '.coffee' ],
+    extensions: [ '.js', '.jsx' ],
     modules: [
       path.resolve('../app/javascript'),
       path.resolve('../vendor/node_modules')

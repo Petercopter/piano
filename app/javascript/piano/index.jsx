@@ -1,8 +1,9 @@
 import _ from 'lodash'
 import React from 'react'
 import ReactBootstrap, { Col, Panel, Row } from 'react-bootstrap'
+import ReactDOM from 'react-dom'
 
-import PianoKeys from './piano_keys'
+import PianoKeys from 'piano/piano_keys'
 
 export default class Piano extends React.Component {
 
@@ -85,3 +86,10 @@ export default class Piano extends React.Component {
     }
   }
 }
+
+document.addEventListener('DOMContentLoaded', event => {
+  ReactDOM.render(
+    <Piano />,
+    document.body.appendChild(document.createElement('div'))
+  )
+})
