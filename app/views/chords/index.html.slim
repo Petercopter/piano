@@ -1,0 +1,17 @@
+h1 Chords
+
+table.table
+  thead
+    tr
+      th
+      th
+      th
+      th
+
+  tbody
+    - @chords.each do |chord|
+      = render 'shared/row_group', group: chord
+
+br
+
+= link_to 'New Chord', new_chord_path

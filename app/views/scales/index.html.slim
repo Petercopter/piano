@@ -10,27 +10,7 @@ table.table
 
   tbody
     - @scales.each do |scale|
-      tr
-        td
-          => scale.pitch.name
-          = scale.type.titleize
-        td
-          ul.list-inline
-            li
-              | &nbsp;
-              br
-              strong L
-              br
-              strong R
-            - scale.piano_keys_scales.each do |piano_keys_scale|
-              li
-                strong= piano_keys_scale.pitch.name
-                br
-                = piano_keys_scale.finger_left
-                br
-                = piano_keys_scale.finger_right
-        td = link_to 'Edit', edit_scale_path(scale)
-        td = link_to 'Destroy', scale, data: { confirm: 'Are you sure?' }, method: :delete
+      = render 'shared/row_group', group: scale
 
 br
 

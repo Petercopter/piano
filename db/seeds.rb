@@ -9,9 +9,10 @@
 pitches = [
   {
     name: 'C',
-    scales: [
+    groups: [
       {
-        type: 'major',
+        category: 'major',
+        type: 'Scale',
         pitches: ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C']
       }
     ]

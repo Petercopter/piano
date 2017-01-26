@@ -21,7 +21,7 @@ class ScalesController < ApplicationController
   # GET /scales/new
   def new
     @scale = Scale.new
-    @scale.piano_keys_scales.build
+    @scale.piano_keys_groups.build
   end
 
   # GET /scales/1/edit
@@ -38,7 +38,6 @@ class ScalesController < ApplicationController
         format.html { redirect_to scales_path, notice: 'Scale was successfully created.' }
         format.json { render :show, status: :created, location: @scale }
       else
-        binding.pry
         format.html { render :new }
         format.json { render json: @scale.errors, status: :unprocessable_entity }
       end
@@ -78,6 +77,6 @@ class ScalesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def scale_params
-    params.fetch(:scale, {}).permit({ piano_keys_scales_attributes: [:_destroy, :finger_left, :finger_right, :id, :piano_key_id, :pitch_id] }, :pitch_id, :type)
+    params.fetch(:scale, {}).permit(:pitch_id, :category, { piano_keys_groups_attributes: [:_destroy, :finger_left, :finger_right, :id, :piano_key_id, :pitch_id] })
   end
 end

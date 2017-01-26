@@ -1,0 +1,21 @@
+tr
+  td
+    => group.pitch.name
+    = group.category.titleize
+  td
+    ul.list-inline
+      li
+        | &nbsp;
+        br
+        strong L
+        br
+        strong R
+      - group.piano_keys_groups.each do |piano_keys_group|
+        li
+          strong= piano_keys_group.pitch.name
+          br
+          = piano_keys_group.finger_left
+          br
+          = piano_keys_group.finger_right
+  td = link_to 'Edit', edit_scale_path(group)
+  td = link_to 'Destroy', group, data: { confirm: 'Are you sure?' }, method: :delete
