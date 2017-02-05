@@ -111,6 +111,6 @@ export default class Piano extends React.Component {
 document.addEventListener('DOMContentLoaded', event => {
   ReactDOM.render(
     <Piano />,
-    document.body.appendChild(document.createElement('div'))
+    document.getElementById('container').appendChild(document.createElement('div'))
   )
 })
