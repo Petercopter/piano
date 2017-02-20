@@ -7,4 +7,5 @@ class Group < ApplicationRecord
 
   accepts_nested_attributes_for :piano_keys_groups, reject_if: :all_blank, allow_destroy: true
 
+  validates :category, presence: true
 end
