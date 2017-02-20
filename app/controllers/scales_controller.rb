@@ -21,7 +21,7 @@ class ScalesController < ApplicationController
   # GET /scales/new
   def new
     @scale = Scale.new
-    @scale.piano_keys_groups.build
+    8.times { @scale.piano_keys_groups.build }
   end
 
   # GET /scales/1/edit
