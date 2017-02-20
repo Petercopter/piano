@@ -4,7 +4,7 @@ class ScalesController < ApplicationController
   # GET /scales
   # GET /scales.json
   def index
-    @scales = Scale.all.joins(:pitches).order('pitches.name', :category).distinct
+    @scales = Scale.all.joins(:pitches).order('pitches.id', :category).distinct
 
     respond_to do |format|
       format.html {}
