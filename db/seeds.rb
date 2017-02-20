@@ -8,14 +8,7 @@
 
 pitches = [
   {
-    name: 'C',
-    groups: [
-      {
-        category: 'major',
-        type: 'Scale',
-        pitches: ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C']
-      }
-    ]
+    name: 'C'
   },
   {
     name: 'C♯'
@@ -34,6 +27,9 @@ pitches = [
   },
   {
     name: 'E'
+  },
+  {
+    name: 'E♯'
   },
   {
     name: 'F'
@@ -64,6 +60,9 @@ pitches = [
   },
   {
     name: 'B'
+  },
+  {
+    name: 'C♭'
   }
 ]
 
@@ -120,7 +119,7 @@ piano_keys = [
     pitch: 'E'
   },
   {
-    pitch: 'F'
+    pitch: 'F E♯'
   },
   {
     pitch: 'F♯ G♭'
@@ -138,7 +137,7 @@ piano_keys = [
     pitch: 'A♯ B♭'
   },
   {
-    pitch: 'B'
+    pitch: 'B C♭'
   },
   {
     pitch: 'C'
@@ -150,18 +149,6 @@ pitches.each do |pitch|
     name: pitch[:name]
   )
 end
-
-# pitches.each do |pitch|
-#   pitch[:scales].to_a.map{ |scale|
-#     Scale.create(
-#       type: scale[:type],
-#       pitch: pitch.find_by(name: pitch[:name]),
-#       pitches: scale[:pitches].map{ |pitch|
-#         pitch.find_by(name: pitch)
-#       }
-#     )
-#   }
-# end
 
 piano_keys.each do |piano_key|
   PianoKey.create(
