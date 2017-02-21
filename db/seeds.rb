@@ -83,7 +83,7 @@ piano_keys = [
     pitch: 'E'
   },
   {
-    pitch: 'F'
+    pitch: 'F E♯'
   },
   {
     pitch: 'F♯ G♭'
@@ -101,7 +101,7 @@ piano_keys = [
     pitch: 'A♯ B♭'
   },
   {
-    pitch: 'B'
+    pitch: 'B C♭'
   },
   {
     pitch: 'C'
