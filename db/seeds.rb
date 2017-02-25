@@ -65,13 +65,16 @@ pitches = [
     name: 'B'
   },
   {
+    name: 'B♯'
+  },
+  {
     name: 'C♭'
   }
 ]
 
 piano_keys = [
   {
-    pitch: 'C'
+    pitch: 'C B♯'
   },
   {
     pitch: 'C♯ D♭'
@@ -107,7 +110,7 @@ piano_keys = [
     pitch: 'B C♭'
   },
   {
-    pitch: 'C'
+    pitch: 'C B♯'
   },
   {
     pitch: 'C♯ D♭'
@@ -143,7 +146,7 @@ piano_keys = [
     pitch: 'B C♭'
   },
   {
-    pitch: 'C'
+    pitch: 'C B♯'
   }
 ]
 
