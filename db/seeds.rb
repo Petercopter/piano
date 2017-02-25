@@ -32,6 +32,9 @@ pitches = [
     name: 'E♯'
   },
   {
+    name: 'F♭'
+  },
+  {
     name: 'F'
   },
   {
@@ -80,7 +83,7 @@ piano_keys = [
     pitch: 'D♯ E♭'
   },
   {
-    pitch: 'E'
+    pitch: 'E F♭'
   },
   {
     pitch: 'F E♯'
@@ -116,7 +119,7 @@ piano_keys = [
     pitch: 'D♯ E♭'
   },
   {
-    pitch: 'E'
+    pitch: 'E F♭'
   },
   {
     pitch: 'F E♯'
