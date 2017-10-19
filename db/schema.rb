@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 20161114071032) do
 
   create_table "groups", force: :cascade do |t|
-    t.string   "type"
-    t.integer  "category"
-    t.integer  "pitch_id"
+    t.string "type"
+    t.integer "category"
+    t.integer "pitch_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["pitch_id"], name: "index_groups_on_pitch_id"
@@ -27,29 +27,29 @@ ActiveRecord::Schema.define(version: 20161114071032) do
   end
 
   create_table "piano_keys_groups", force: :cascade do |t|
-    t.integer  "piano_key_id"
-    t.integer  "pitch_id"
-    t.integer  "group_id"
-    t.integer  "finger_left"
-    t.integer  "finger_right"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer "piano_key_id"
+    t.integer "pitch_id"
+    t.integer "group_id"
+    t.integer "finger_left"
+    t.integer "finger_right"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_piano_keys_groups_on_group_id"
     t.index ["piano_key_id"], name: "index_piano_keys_groups_on_piano_key_id"
     t.index ["pitch_id"], name: "index_piano_keys_groups_on_pitch_id"
   end
 
   create_table "piano_keys_pitches", force: :cascade do |t|
-    t.integer  "piano_key_id"
-    t.integer  "pitch_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer "piano_key_id"
+    t.integer "pitch_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["piano_key_id"], name: "index_piano_keys_pitches_on_piano_key_id"
     t.index ["pitch_id"], name: "index_piano_keys_pitches_on_pitch_id"
   end
 
   create_table "pitches", force: :cascade do |t|
-    t.string   "name"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
